@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>انضمي إلى مجموعة واتساب 🌿</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      text-align: center;
+      margin-top: 120px;
+      background: #f4f7f6;
+    }
+    h2 {
+      color: #333;
+      margin-bottom: 40px;
+    }
+    a {
+      background: #25D366;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 20px;
+      transition: 0.2s;
+    }
+    a:hover {
+      background: #1ebe5a;
+    }
+  </style>
+</head>
+<body>
+  <h2>✨ مرحباً! اضغطي على الزر أسفله للدخول مباشرة إلى مجموعة واتساب</h2>
+  <a id="join-btn" href="#">ادخلي الآن 💚</a>
+
+  <script>
+    const androidLink = "https://chat.whatsapp.com/EtljN7dZYIRI2ah0wGx3FW?mode=wwt";
+    const iosLink = "https://chat.whatsapp.com/EtljN7dZYIRI2ah0wGx3FW";
+
+    // نتحقق من نوع الجهاز
+    const isAndroid = /Android/i.test(navigator.userAgent);
+    const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    const btn = document.getElementById("join-btn");
+
+    if (isAndroid) {
+      btn.href = androidLink;
+    } else if (isIOS) {
+      btn.href = iosLink;
+    } else {
+      btn.href = iosLink; // افتراضي لأي جهاز آخر
+    }
+
+    // يمكن يفتح الرابط مباشرة بعد 2 ثواني (اختياري)
+    // setTimeout(() => { window.location.href = btn.href }, 2000);
+  </script>
+</body>
+</html>
